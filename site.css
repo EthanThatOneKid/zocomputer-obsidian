@@ -108,10 +108,8 @@ td.docs p {
   padding-top: 5px;
   padding-bottom: 15px;
 }
-td.docs[colspan="2"] {
-  width: auto;
-  max-width: none;
-  min-width: 0;
+td.code.empty {
+  display: none;
 }
 td.code {
   width: 575px;
