@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zo Computer: Obsidian — Lock It Down</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    window.onkeydown = (e) => {
+      if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
+      if (e.key == "ArrowLeft") window.location.href = 'vault.html';
+    }
+  </script>
+  <body>
+    <div class="example" id="auth">
+      <h2><a href="./">Zo Computer: Obsidian</a>: Lock It Down</h2>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              The server supports three auth modes via the
+              <code>AUTH_MODE</code> environment variable.
+            </p>
+          </td>
+          <td class="code leading">
+            <table>
+              <tr><th>Mode</th><th>Read</th><th>Write</th><th>Use Case</th></tr>
+              <tr><td><code>full</code></td><td>Auth only</td><td>Auth only</td><td>Private vault</td></tr>
+              <tr><td><code>readonly</code></td><td>Anyone</td><td>Auth only</td><td>Public read</td></tr>
+              <tr><td><code>disabled</code></td><td>Anyone</td><td>Anyone</td><td>Fully open</td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Set these environment variables to configure auth:
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> <span class="nb">export</span> <span class="nv">AUTH_MODE</span><span class="o">=</span>full
+<span class="gp">$</span> <span class="nb">export</span> <span class="nv">OBSIDIAN_WEB_USERNAME</span><span class="o">=</span>ethan
+<span class="gp">$</span> <span class="nb">export</span> <span class="nv">OBSIDIAN_WEB_PASSWORD</span><span class="o">=</span>your-secure-password
+<span class="gp">$</span> <span class="nb">export</span> <span class="nv">OBSIDIAN_WEB_REALM</span><span class="o">=</span><span class="s">"Obsidian Web"</span>
+<span class="gp">$</span> npm start</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              With <code>AUTH_MODE=full</code>, visiting the app
+              redirects to a sign-in form at <code>/login</code>.
+              Authenticated users get an HttpOnly cookie session.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> curl -s -o /dev/null -w <span class="s">"%{http_code}"</span> http://127.0.0.1:3000/
+<span class="go">302</span></code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              If <code>OBSIDIAN_WEB_PASSWORD</code> is unset, auth
+              stays off regardless of <code>AUTH_MODE</code>.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <p class="footer">
+        based on <a href="https://github.com/MusiCode1/obsidian-web">obsidian-web</a>
+        by <a href="https://github.com/EthanThatOneKid">Ethan Davidson</a> |
+        <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
+      </p>
+    </div>
+  </body>
+</html>

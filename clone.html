@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zo Computer: Obsidian — Clone the Repo</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    window.onkeydown = (e) => {
+      if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
+      if (e.key == "ArrowRight") window.location.href = 'fetch-renderer.html';
+      if (e.key == "ArrowLeft") window.location.href = 'hello.html';
+    }
+  </script>
+  <body>
+    <div class="example" id="clone">
+      <h2><a href="./">Zo Computer: Obsidian</a>: Clone the Repo</h2>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Start by cloning the <code>obsidian-web</code>
+              repository. This gives you the server code, shims,
+              and the project structure.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> git clone https://github.com/EthanThatOneKid/obsidian-web.git
+<span class="gp">$</span> cd obsidian-web</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              The repo contains the Node.js server, client runtime,
+              Cloudflare deployment option, and the scripts that
+              fetch Obsidian's renderer.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> ls -F
+<span class="go">scripts/  src/  user-data/  .gitignore  README.md</span></code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              If you already have a Zo project set up, you can make
+              this its working directory.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <p class="next">
+        Next example: <a href="fetch-renderer.html" rel="next">Download the Renderer</a>.
+      </p>
+      <p class="footer">
+        based on <a href="https://github.com/MusiCode1/obsidian-web">obsidian-web</a>
+        by <a href="https://github.com/EthanThatOneKid">Ethan Davidson</a> |
+        <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
+      </p>
+    </div>
+  </body>
+</html>

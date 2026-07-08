@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zo Computer: Obsidian — Install Dependencies</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    window.onkeydown = (e) => {
+      if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
+      if (e.key == "ArrowRight") window.location.href = 'start.html';
+      if (e.key == "ArrowLeft") window.location.href = 'fetch-renderer.html';
+    }
+  </script>
+  <body>
+    <div class="example" id="install">
+      <h2><a href="./">Zo Computer: Obsidian</a>: Install Dependencies</h2>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Navigate to the server directory and install the
+              Node.js dependencies.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> <span class="nb">cd</span> src/server
+<span class="gp">$</span> npm install</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              The server depends on Express for HTTP, ws for
+              WebSocket sync, chokidar for file watching, and
+              compression for gzip responses.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="go">added 88 packages, and audited 89 packages in 847ms</span></code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              That's all the server needs. No global installs,
+              no system packages, no build step.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <p class="next">
+        Next example: <a href="start.html" rel="next">Start the Server</a>.
+      </p>
+      <p class="footer">
+        based on <a href="https://github.com/MusiCode1/obsidian-web">obsidian-web</a>
+        by <a href="https://github.com/EthanThatOneKid">Ethan Davidson</a> |
+        <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
+      </p>
+    </div>
+  </body>
+</html>

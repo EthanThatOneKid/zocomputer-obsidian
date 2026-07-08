@@ -1,0 +1,179 @@
+/* CSS reset: https://meyerweb.com/eric/tools/css/reset/ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* Layout and typography */
+body {
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+em {
+  font-style: italic;
+}
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: 40px;
+}
+h2 a {
+  text-decoration: none;
+}
+div.example {
+  width: 995px;
+  max-width: calc(100% - 24px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+}
+div.example table {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+p.next {
+  margin-bottom: 20px;
+}
+p.footer {
+  font-size: 75%;
+}
+div#intro {
+  width: 420px;
+  min-width: 420px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+}
+div#intro p {
+  padding-top: 20px;
+}
+div#intro ul {
+  padding-top: 20px;
+}
+table td {
+  border: 0;
+  outline: 0;
+}
+td.docs {
+  width: 420px;
+  max-width: 420px;
+  min-width: 420px;
+  min-height: 5px;
+  vertical-align: top;
+  text-align: left;
+}
+td.docs p {
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+td.code {
+  width: 575px;
+  max-width: 575px;
+  min-width: 575px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  vertical-align: top;
+}
+td.code.leading {
+  padding-bottom: 11px;
+}
+pre, code {
+  font-size: 14px; line-height: 18px;
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Lucida Console', monospace;
+}
+
+
+/* Colors: light mode */
+body {
+  background-color: #ffffff;
+  color: #252519;
+}
+a, a:visited {
+  color: #261a3b;
+}
+p.footer {
+  color: #808080;
+}
+p.footer a, p.footer a:visited {
+  color: #808080;
+}
+td.code {
+  background: #f0f0f0;
+}
+
+/* Syntax highlighting */
+body .k  { color: #954121 }  /* Keyword */
+body .s  { color: #219161 }  /* Literal.String */
+body .gp { color: #000080 }  /* Generic.Prompt: shell prompt */
+body .go { color: #808080 }  /* Generic.Output: shell output */
+body .c1 { color: #808080 }  /* Comment.Single */
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1f1f1f;
+    color: #dadada;
+  }
+  a, a:visited {
+    color: #e4e4e4;
+  }
+  p.footer {
+    color: #898e98;
+  }
+  p.footer a, p.footer a:visited {
+    color: #898e98;
+  }
+  td.code {
+    background: #282828;
+  }
+
+  body .k  { color: #af5a54 }  /* Keyword */
+  body .s  { color: #718e72 }  /* Literal.String */
+  body .gp { color: #8a6ab1 }  /* Generic.Prompt */
+  body .go { color: #868686 }  /* Generic.Output */
+  body .c1 { color: #868686 }  /* Comment.Single */
+}

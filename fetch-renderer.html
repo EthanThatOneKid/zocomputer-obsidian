@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zo Computer: Obsidian — Download the Renderer</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    window.onkeydown = (e) => {
+      if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
+      if (e.key == "ArrowRight") window.location.href = 'install.html';
+      if (e.key == "ArrowLeft") window.location.href = 'clone.html';
+    }
+  </script>
+  <body>
+    <div class="example" id="fetch-renderer">
+      <h2><a href="./">Zo Computer: Obsidian</a>: Download the Renderer</h2>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Run the setup script to download Obsidian's browser-facing
+              renderer files from the official release.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> node scripts/update-obsidian.js</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              The script fetches the <code>.asar.gz</code> release
+              asset, verifies its SHA-256 digest, and extracts the
+              renderer into <code>vendor/obsidian/</code>.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="go">Obsidian release: 1.12.7 (v1.12.7)
+Selected asset: obsidian-1.12.7.asar.gz
+Downloading obsidian-1.12.7.asar.gz
+Verified SHA-256: 75dd34f14c9db558fbad19e80f0b201bc9805b51b7388370277e0f91a38bd850
+Decompressing obsidian-1.12.7.asar.gz
+Extracting obsidian-1.12.7.asar
+Extracted 352 files (23968823 bytes)
+Updated vendor/obsidian to Obsidian 1.12.7</span></code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              You can pin a specific version if needed:
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> node scripts/update-obsidian.js --version 1.12.7</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <p class="next">
+        Next example: <a href="install.html" rel="next">Install Dependencies</a>.
+      </p>
+      <p class="footer">
+        based on <a href="https://github.com/MusiCode1/obsidian-web">obsidian-web</a>
+        by <a href="https://github.com/EthanThatOneKid">Ethan Davidson</a> |
+        <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
+      </p>
+    </div>
+  </body>
+</html>

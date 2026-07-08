@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zo Computer: Obsidian — Hello, Obsidian</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    window.onkeydown = (e) => {
+      if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
+      if (e.key == "ArrowRight") window.location.href = 'clone.html';
+    }
+  </script>
+  <body>
+    <div class="example" id="hello">
+      <h2><a href="./">Zo Computer: Obsidian</a>: Hello, Obsidian</h2>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Your notes stay as normal Markdown files. The browser
+              is just the window into your vault — you run the
+              Obsidian web renderer on your own Zo.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              This is not remote desktop. No Electron needed.
+              Instead, <code>obsidian-web</code> loads Obsidian's
+              original renderer (<code>app.js</code>) unmodified and
+              replaces every Node.js / Electron dependency with
+              lightweight HTTP shims.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              What you need: a Zo account, a copy of your vault,
+              the obsidian-web project, and a private Zo route or
+              service to host it.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <p class="next">
+        Next example: <a href="clone.html" rel="next">Clone the Repo</a>.
+      </p>
+
+      <p class="footer">
+        based on <a href="https://github.com/MusiCode1/obsidian-web">obsidian-web</a>
+        by <a href="https://github.com/EthanThatOneKid">Ethan Davidson</a> |
+        <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
+      </p>
+    </div>
+  </body>
+</html>

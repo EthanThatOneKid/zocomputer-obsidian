@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zo Computer: Obsidian — Point at Your Vault</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    window.onkeydown = (e) => {
+      if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
+      if (e.key == "ArrowRight") window.location.href = 'auth.html';
+      if (e.key == "ArrowLeft") window.location.href = 'start.html';
+    }
+  </script>
+  <body>
+    <div class="example" id="vault">
+      <h2><a href="./">Zo Computer: Obsidian</a>: Point at Your Vault</h2>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Set <code>VAULT_PATH</code> to point at your notes
+              folder. The default is <code>user-data/demo-vault</code>
+              if you don't set it.
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> <span class="nb">export</span> <span class="nv">VAULT_PATH</span><span class="o">=</span>/path/to/your/vault
+<span class="gp">$</span> npm start</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              The bootstrap API confirms the vault contents loaded.
+              Here's what the demo vault looks like:
+            </p>
+          </td>
+          <td class="code leading">
+            <pre><code><span class="gp">$</span> curl -s http://127.0.0.1:3000/api/bootstrap | jq <span class="s">'.dirs[""]'</span>
+<span class="go">[
+  { "name": "Linked notes.md", "isFile": true, "size": 74 },
+  { "name": "Welcome.md", "isFile": true, "size": 300 },
+  { "name": "folder", "isDirectory": true },
+  { "name": "ללא כותרת.base", "isFile": true, "size": 42 }
+]</span></code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Your vault stays a folder of plain files on disk.
+              The browser is only the window into that folder.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              If you need to change the vault later without restarting,
+              visit <code>/starter</code> and enter an absolute path.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <p class="next">
+        Next example: <a href="auth.html" rel="next">Lock It Down</a>.
+      </p>
+      <p class="footer">
+        based on <a href="https://github.com/MusiCode1/obsidian-web">obsidian-web</a>
+        by <a href="https://github.com/EthanThatOneKid">Ethan Davidson</a> |
+        <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
+      </p>
+    </div>
+  </body>
+</html>
