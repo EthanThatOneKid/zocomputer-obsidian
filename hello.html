@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Zo Computer: Obsidian: Hello, Obsidian</title>
+    <title>Zo Computer: Obsidian: Set It Up</title>
     <link rel=stylesheet href="site.css">
+    <script>
+      window.onkeydown = function (e) {
+        if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
+        if (e.key == "ArrowRight") window.location.href = 'private-vault.html';
+      };
+    </script>
   </head>
-  <script>
-    window.onkeydown = function (e) {
-      if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
-      if (e.key == "ArrowRight") window.location.href = 'clone.html';
-    };
-  </script>
   <body>
-    <div class="example" id="hello">
-      <h2><a href="./">Zo Computer: Obsidian</a>: Hello, Obsidian</h2>
+    <div class="example" id="setup">
+      <h2><a href="./">Zo Computer: Obsidian</a>: Set It Up</h2>
 
       <table>
         <tr>
@@ -34,9 +34,9 @@
           <td class="docs">
             <p>
               This is not remote desktop. No Electron needed.
-              Instead, <code>obsidian-web</code> loads Obsidian's
-              original renderer unmodified and replaces every
-              Electron dependency with lightweight HTTP shims.
+              <code>obsidian-web</code> loads Obsidian's original
+              renderer unmodified and replaces every Electron
+              dependency with lightweight HTTP shims.
             </p>
           </td>
           <td class="code empty"></td>
@@ -47,20 +47,7 @@
         <tr>
           <td class="docs">
             <p>
-              What you need: a Zo account, a copy of your vault,
-              the obsidian-web project, and a private Zo service
-              to host it.
-            </p>
-          </td>
-          <td class="code empty"></td>
-        </tr>
-      </table>
-
-      <table>
-        <tr>
-          <td class="docs">
-            <p>
-              The prompt below sets everything up in one go.
+              The prompt below sets up the server from scratch.
               Copy it and paste it to your Zo agent.
             </p>
           </td>
@@ -68,20 +55,33 @@
             <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
             <pre><code>Set up Obsidian Web on my Zo so I can access my Obsidian vault from a browser.
 
-Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory.
-Download the Obsidian renderer by running node scripts/update-obsidian.js.
-If the vendor directory does not exist yet, create it first.
-Install the Node.js dependencies by running npm install inside src/server.
-Start the server on port 3000 with AUTH_MODE set to disabled so I can test it.
-Do not add any authentication yet.
+1. Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory and name it obsidian-web.
 
-Confirm when the server is running and responding to HTTP requests.</code></pre>
+2. Inside obsidian-web, create the vendor directory and run node scripts/update-obsidian.js to download the Obsidian browser renderer.
+
+3. Install the server dependencies by running npm install inside the src/server directory.
+
+4. Start the server on port 3000 with AUTH_MODE set to disabled. Do not add any authentication yet.
+
+After each step, confirm it succeeded before moving on. When the server is running, tell me the HTTP status code from http://127.0.0.1:3000.</code></pre>
           </td>
         </tr>
       </table>
 
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Once the server is running, choose how to configure it.
+            </p>
+          </td>
+          <td class="code empty"></td>
+        </tr>
+      </table>
+
       <p class="next">
-        Next example: <a href="clone.html" rel="next">Clone the Repo</a>.
+        <a href="private-vault.html">Private Vault (Recommended)</a> &nbsp;|&nbsp;
+        <a href="public-vault.html">Public Vault</a>
       </p>
 
       <p class="footer">
