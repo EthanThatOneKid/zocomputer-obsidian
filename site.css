@@ -226,3 +226,60 @@ body .c1 { color: #808080 }  /* Comment.Single */
   body .go { color: #868686 }  /* Generic.Output */
   body .c1 { color: #868686 }  /* Comment.Single */
 }
+
+/* Responsive: mobile and small screens */
+@media (max-width: 768px) {
+  div.example {
+    width: auto;
+  }
+  div.example > table,
+  div.example > table tbody,
+  div.example > table tbody tr {
+    display: block;
+    width: auto;
+  }
+  div.example > table tbody tr td {
+    display: block;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  td.docs {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+  td.code {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+  td.code.empty {
+    display: none;
+  }
+  div#intro {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  div#intro ul {
+    padding-left: 0;
+  }
+  pre, code {
+    font-size: 13px;
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+  .copy-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  h2 {
+    word-break: break-word;
+  }
+}
