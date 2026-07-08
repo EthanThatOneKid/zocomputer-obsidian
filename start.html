@@ -6,11 +6,11 @@
     <link rel=stylesheet href="site.css">
   </head>
   <script>
-    window.onkeydown = (e) => {
+    window.onkeydown = function (e) {
       if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
       if (e.key == "ArrowRight") window.location.href = 'vault.html';
       if (e.key == "ArrowLeft") window.location.href = 'install.html';
-    }
+    };
   </script>
   <body>
     <div class="example" id="start">
@@ -20,60 +20,21 @@
         <tr>
           <td class="docs">
             <p>
-              Start the Node.js server from the <code>src/server</code>
-              directory. By default it binds to <code>127.0.0.1:3000</code>.
+              The server binds to <code>127.0.0.1:3000</code> by
+              default. Give Zo this prompt to start it without
+              authentication so you can test.
             </p>
           </td>
           <td class="code leading">
-            <pre><code><span class="gp">$</span> <span class="nb">cd</span> src/server
-<span class="gp">$</span> npm start</code></pre>
-          </td>
-        </tr>
-      </table>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre><code>Start the Obsidian Web server.
 
-      <table>
-        <tr>
-          <td class="docs">
-            <p>
-              For development with auto-reload on file changes:
-            </p>
-          </td>
-          <td class="code leading">
-            <pre><code><span class="gp">$</span> npm run dev</code></pre>
-          </td>
-        </tr>
-      </table>
+Go to the src/server directory inside obsidian-web.
+Start the server by running: AUTH_MODE=disabled node index.js
+The server should bind to 127.0.0.1 on port 3000.
 
-      <table>
-        <tr>
-          <td class="docs">
-            <p>
-              Once running, verify the server responds:
-            </p>
-          </td>
-          <td class="code leading">
-            <pre><code><span class="gp">$</span> curl -s -o /dev/null -w <span class="s">"%{http_code}"</span> http://127.0.0.1:3000/
-<span class="go">200</span></code></pre>
-          </td>
-        </tr>
-      </table>
-
-      <table>
-        <tr>
-          <td class="docs">
-            <p>
-              Open <code>http://127.0.0.1:3000</code> in a browser.
-              You should see the Obsidian loading screen with its
-              dark theme and spinner.
-            </p>
-          </td>
-          <td class="code leading">
-            <pre><code><span class="gp">$</span> curl -s http://127.0.0.1:3000/ | head -5
-<span class="go">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"/&gt;
-  &lt;title&gt;Obsidian Web&lt;/title&gt;</span></code></pre>
+After starting, verify it responds by making a request to http://127.0.0.1:3000.
+Tell me the HTTP status code and confirm the server is ready.</code></pre>
           </td>
         </tr>
       </table>
@@ -87,5 +48,6 @@
         <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
       </p>
     </div>
+    <script src="site.js"></script>
   </body>
 </html>

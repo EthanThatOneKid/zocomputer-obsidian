@@ -6,11 +6,11 @@
     <link rel=stylesheet href="site.css">
   </head>
   <script>
-    window.onkeydown = (e) => {
+    window.onkeydown = function (e) {
       if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
       if (e.key == "ArrowRight") window.location.href = 'install.html';
       if (e.key == "ArrowLeft") window.location.href = 'clone.html';
-    }
+    };
   </script>
   <body>
     <div class="example" id="fetch-renderer">
@@ -20,47 +20,21 @@
         <tr>
           <td class="docs">
             <p>
-              Run the setup script to download Obsidian's browser-facing
-              renderer files from the official release.
+              Obsidian's browser renderer files are not bundled in
+              the Git repo. Zo needs to download them from the
+              official release using the setup script.
             </p>
           </td>
           <td class="code leading">
-            <pre><code><span class="gp">$</span> node scripts/update-obsidian.js</code></pre>
-          </td>
-        </tr>
-      </table>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre><code>Download the Obsidian renderer for my obsidian-web setup.
 
-      <table>
-        <tr>
-          <td class="docs">
-            <p>
-              The script fetches the <code>.asar.gz</code> release
-              asset, verifies its SHA-256 digest, and extracts the
-              renderer into <code>vendor/obsidian/</code>.
-            </p>
-          </td>
-          <td class="code leading">
-            <pre><code><span class="go">Obsidian release: 1.12.7 (v1.12.7)
-Selected asset: obsidian-1.12.7.asar.gz
-Downloading obsidian-1.12.7.asar.gz
-Verified SHA-256: 75dd34f14c9db558fbad19e80f0b201bc9805b51b7388370277e0f91a38bd850
-Decompressing obsidian-1.12.7.asar.gz
-Extracting obsidian-1.12.7.asar
-Extracted 352 files (23968823 bytes)
-Updated vendor/obsidian to Obsidian 1.12.7</span></code></pre>
-          </td>
-        </tr>
-      </table>
+Inside the obsidian-web directory, run node scripts/update-obsidian.js.
+If the vendor directory does not exist, create it first before running the script.
+The script fetches the latest release, verifies its checksum, and extracts
+about 352 files into vendor/obsidian.
 
-      <table>
-        <tr>
-          <td class="docs">
-            <p>
-              You can pin a specific version if needed:
-            </p>
-          </td>
-          <td class="code leading">
-            <pre><code><span class="gp">$</span> node scripts/update-obsidian.js --version 1.12.7</code></pre>
+Confirm when the renderer is downloaded and tell me which version.</code></pre>
           </td>
         </tr>
       </table>
@@ -74,5 +48,6 @@ Updated vendor/obsidian to Obsidian 1.12.7</span></code></pre>
         <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
       </p>
     </div>
+    <script src="site.js"></script>
   </body>
 </html>

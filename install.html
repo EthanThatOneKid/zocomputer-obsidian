@@ -6,11 +6,11 @@
     <link rel=stylesheet href="site.css">
   </head>
   <script>
-    window.onkeydown = (e) => {
+    window.onkeydown = function (e) {
       if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
       if (e.key == "ArrowRight") window.location.href = 'start.html';
       if (e.key == "ArrowLeft") window.location.href = 'fetch-renderer.html';
-    }
+    };
   </script>
   <body>
     <div class="example" id="install">
@@ -20,28 +20,19 @@
         <tr>
           <td class="docs">
             <p>
-              Navigate to the server directory and install the
-              Node.js dependencies.
+              The Node.js server needs Express, WebSocket support,
+              file watching, and compression. Ask Zo to install them.
             </p>
           </td>
           <td class="code leading">
-            <pre><code><span class="gp">$</span> <span class="nb">cd</span> src/server
-<span class="gp">$</span> npm install</code></pre>
-          </td>
-        </tr>
-      </table>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre><code>Install the server dependencies for obsidian-web.
 
-      <table>
-        <tr>
-          <td class="docs">
-            <p>
-              The server depends on Express for HTTP, ws for
-              WebSocket sync, chokidar for file watching, and
-              compression for gzip responses.
-            </p>
-          </td>
-          <td class="code leading">
-            <pre><code><span class="go">added 88 packages, and audited 89 packages in 847ms</span></code></pre>
+Go to the src/server directory inside obsidian-web and run npm install.
+This installs Express for HTTP, ws for WebSocket sync, chokidar for file
+watching, and compression.
+
+Tell me how many packages were installed and confirm there are no errors.</code></pre>
           </td>
         </tr>
       </table>
@@ -55,5 +46,6 @@
         <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
       </p>
     </div>
+    <script src="site.js"></script>
   </body>
 </html>

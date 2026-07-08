@@ -6,10 +6,10 @@
     <link rel=stylesheet href="site.css">
   </head>
   <script>
-    window.onkeydown = (e) => {
+    window.onkeydown = function (e) {
       if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
       if (e.key == "ArrowRight") window.location.href = 'clone.html';
-    }
+    };
   </script>
   <body>
     <div class="example" id="hello">
@@ -34,9 +34,8 @@
             <p>
               This is not remote desktop. No Electron needed.
               Instead, <code>obsidian-web</code> loads Obsidian's
-              original renderer (<code>app.js</code>) unmodified and
-              replaces every Node.js / Electron dependency with
-              lightweight HTTP shims.
+              original renderer unmodified and replaces every
+              Electron dependency with lightweight HTTP shims.
             </p>
           </td>
           <td class="code empty"></td>
@@ -48,11 +47,35 @@
           <td class="docs">
             <p>
               What you need: a Zo account, a copy of your vault,
-              the obsidian-web project, and a private Zo route or
-              service to host it.
+              the obsidian-web project, and a private Zo service
+              to host it.
             </p>
           </td>
           <td class="code empty"></td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              The prompt below sets everything up in one go.
+              Copy it and paste it to your Zo agent.
+            </p>
+          </td>
+          <td class="code leading">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre><code>Set up Obsidian Web on my Zo so I can access my Obsidian vault from a browser.
+
+Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory.
+Download the Obsidian renderer by running node scripts/update-obsidian.js.
+If the vendor directory does not exist yet, create it first.
+Install the Node.js dependencies by running npm install inside src/server.
+Start the server on port 3000 with AUTH_MODE set to disabled so I can test it.
+Do not add any authentication yet.
+
+Confirm when the server is running and responding to HTTP requests.</code></pre>
+          </td>
         </tr>
       </table>
 
@@ -66,5 +89,6 @@
         <a href="https://github.com/EthanThatOneKid/zocomputer-obsidian">source</a>
       </p>
     </div>
+    <script src="site.js"></script>
   </body>
 </html>
