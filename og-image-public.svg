@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1f1f1f"/>
+  <text x="600" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="56" fill="#ffffff" text-anchor="middle" font-weight="bold">Zo Computer: Obsidian</text>
+  <text x="600" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#898e98" text-anchor="middle">Public Vault</text>
+  <line x1="540" y1="370" x2="660" y2="370" stroke="#555" stroke-width="1"/>
+</svg>
