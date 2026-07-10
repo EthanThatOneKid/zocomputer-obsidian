@@ -46,7 +46,7 @@ That is a different relationship with infrastructure. Less dashboard clicking. L
 
 ## Private by default, public on purpose
 
-The tutorial has two follow-up paths after setup: private vault and public vault.
+The tutorial has two paths: password-protected (default) and public readonly.
 
 The private mode is the obvious safe default. Put the vault behind authentication. Only you can read or write. If your Obsidian vault contains journal entries, credentials, financial notes, family information, unfinished thoughts, or anything emotionally radioactive, this is the mode you want.
 
@@ -69,7 +69,7 @@ The most practical part of the tutorial is also the weirdest part: the install i
 Not prose around commands. Not a checklist that assumes you are the shell. Actual instructions for an agent:
 
 ```text
-Set up Obsidian Web on my Zo so I can access my Obsidian vault from a browser.
+Set up a password-protected Obsidian Web vault on my Zo so only I can access my notes from a browser.
 
 1. Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory and name it obsidian-web.
 
@@ -77,9 +77,13 @@ Set up Obsidian Web on my Zo so I can access my Obsidian vault from a browser.
 
 3. Install the server dependencies by running npm install inside the src/server directory.
 
-4. Start the server on port 3000 with AUTH_MODE set to disabled. Do not add any authentication yet.
+4. Set VAULT_PATH to the absolute path of my Obsidian vault. The default is user-data/demo-vault if I do not set it.
 
-After each step, confirm it succeeded before moving on. When the server is running, tell me the HTTP status code from http://127.0.0.1:3000.
+5. Protect the vault with authentication. Set AUTH_MODE to full. Set OBSIDIAN_WEB_USERNAME to ethan. Set OBSIDIAN_WEB_PASSWORD to a strong password. I will provide one when you ask. Set OBSIDIAN_WEB_REALM to "Obsidian Web".
+
+6. Start the server on port 3000.
+
+After each step, confirm it succeeded before moving on. When the server is running, tell me the HTTP status code from http://127.0.0.1:3000. If it is 302, the login page is working.
 ```
 
 There is still technical specificity here. The prompt names the repo, directories, scripts, environment variables, ports, and verification checks. But the human action is different. You are not doing the setup. You are supervising it.
@@ -100,9 +104,7 @@ Self-hosting your notes is not automatically safer.
 
 Owning the server means you also own the consequences of misconfiguration. Public-read mode really means public-read. If your vault has secrets in it, do not expose it. If you do not set a password, authentication stays off. If you point the server at the wrong folder, you may publish more than you intended.
 
-That is why I like that the tutorial separates the modes instead of pretending there is one happy path.
-
-Private is recommended. Public requires caution. Disabled auth is only for initial setup.
+That is why I like that the tutorial lets you choose your mode upfront instead of pretending there is one happy path.
 
 The point is not to make risk disappear. The point is to make the boundaries legible.
 

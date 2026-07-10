@@ -1,41 +1,47 @@
 # Video script: "Obsidian in Any Browser with Zo"
 
-**Target:** ~2.5 min, screen recording + face cam  
-**Format:** Standalone walkthrough — no external prerequisites or callouts  
+**Target:** ~2.5 min, single continuous recording  
+**Format:** One fluid take. All windows pre-opened, ready to switch between.  
 **Tone:** Direct, confident, relaxed. No fluff.
 
 ---
 
-## Shot list
+## Prep — open these before recording
 
-| Time | Face cam | Screen | Audio |
-|------|----------|--------|-------|
-| 0:00-0:10 | Face cam centered, plain background | — | "Your notes should not live inside someone else's product roadmap. That is the idea behind this tutorial." |
-| 0:10-0:18 | Face cam continues | Fade to: `zocomputer-obsidian` landing page in browser | "Zo Computer: Obsidian. A prompt reference that lets you run the Obsidian web renderer on your own Zo in one copy-paste." |
-| 0:18-0:28 | — | Scroll to the "Set It Up" prompt block. Click the copy icon on the prompt. | No voiceover — just a click + tap sound effect |
-| 0:28-0:45 | — | Switch to Zo chat window (browser or desktop). Paste the prompt. Hit enter. | "Copy that into your Zo agent. One prompt. The agent clones the repo, installs dependencies, downloads the Obsidian renderer, and starts the server. Each step verified." |
-| 0:45-0:55 | — | Zo agent streams its output — clone progress, npm install, then "HTTP 200" | "It reports back with a 200. The whole flow takes about 50 seconds." |
-| 0:55-1:05 | — | Open a new browser tab. Navigate to the running Obsidian Web instance. Vault loads. | "Now your vault is reachable from any browser. The files live on your Zo. The renderer is the real Obsidian frontend, just served without Electron." |
-| 1:05-1:18 | — | Scroll the private vault page, then public vault page on the tutorial site | "After setup, two paths: private vault with full auth, or public-read — anyone can view, only you edit. The tutorial documents both." |
-| 1:18-1:30 | Face cam returns | Fade to split screen: tutorial prompt (left) + Zo agent response (right) | "The interesting part is not the server. It is that the documentation is prompt-native. Written for humans and executed by agents." |
-| 1:30-1:40 | Face cam continues | Fade to: `ethanthatonekid.github.io/zocomputer-obsidian` | "Link in the description. Your notes stay yours. Now they can have a front door." |
+- **Tab 1:** `zocomputer-obsidian` setup page (`hello.html`)
+- **Tab 2:** `obsidian-web` instance on Zo (login page showing — pre-loaded after a test run so it is ready)
+- **Window:** Zo chat, fresh session, cursor in the input field
+- **Desktop:** Clean wallpaper, no icons. All three windows arranged in a stack so alt-tabbing is one tap each.
+
+---
+
+## Run of show — one continuous take
+
+| Cue | Screen | Audio |
+|-----|--------|-------|
+| 1 | Face cam centered, plain background | "You can run Obsidian in any browser from your own Zo. Let me show you how." |
+| 2 | Switch to **Tab 1** — setup page. Scroll down slowly past the password-protected prompt, pause on the public readonly prompt, then scroll back up to password-protected. Click the copy button. | "Two modes here. Password-protected is the default — only you can read and write. Or public readonly — anyone can view, only you can edit. I will go with password-protected. Copy the prompt." |
+| 3 | Switch to **Zo window**. Paste the prompt. Hit enter. Agent starts streaming output. | "Paste it into Zo and hit enter. One prompt, the agent does the rest." |
+| 4 | Zo streams clone, npm install, renderer download, config, server start. Let it run at real speed. Keep talking over it. | "It is cloning obsidian-web, installing the server dependencies, downloading the browser renderer, setting the vault path, configuring auth, then starting the server. About 50 seconds end to end." |
+| 5 | Zo shows HTTP 302 — login page is live | "And there it is — 302. The login page is up." |
+| 6 | Switch to **Tab 2** — obsidian-web login page. Type credentials. Hit enter. Vault loads. Click open a note. Click into search. | "Open a browser tab, log in with the credentials you gave the agent, and there is your vault. Every note, every folder, graph view — it is all there. The real Obsidian frontend, served from your Zo." |
+| 7 | Switch to face cam | "Link in the description. Your notes stay yours. Now they have a front door." |
 
 ---
 
 ## Production notes
 
-- **Face cam:** Intro + Outro only (~20 seconds total). Middle is pure screen demo.
+- **Single take.** Press record once. Switch between pre-opened windows by alt-tab. No cuts.
+- **Face cam:** picture-in-picture corner overlay for the whole video, or start full-frame then shrink to corner after cue 1. Up to you.
 - **Screen recording:** OBS, 1920x1080. Browser window ~1200px wide, centered. Cursor visible.
-- **Agent pacing:** Record at real speed; speed up to ~1.5-2x in edit if the agent takes the full 60 seconds.
-- **Audio:** No music. Optionally a very quiet ambient drone during the demo section if the silence feels dry.
-- **End card:** Static — QR code to tutorial URL + "Zo Computer: Obsidian" text. Hold 3 seconds.
+- **Zo pacing:** Let it run at real speed. Talk over it — the execution is the visual, your voice carries the timeline.
+- **End card:** Static — QR code to tutorial URL + "Zo Computer: Obsidian" text. Hold 3 seconds. Either record it as the last 3 seconds of the take or add it in editing.
 
 ## Recording checklist
 
-- [ ] Face cam footage — intro and outro, shot from the same angle/lighting
-- [ ] Browser tab: `zocomputer-obsidian` landing page (click the copy icon on the setup prompt)
-- [ ] Zo session: paste the prompt, let it execute fully
-- [ ] Browser tab: `obsidian-web` instance showing a loaded vault
-- [ ] Browser tab: scroll the private vault page, then public vault page
-- [ ] Split-screen still (optional): prompt left, agent response right
-- [ ] End card image
+- [ ] Tab 1 — setup page, scrolled to the password-protected prompt, copy button visible
+- [ ] Tab 2 — obsidian-web login page, pre-loaded and ready
+- [ ] Zo window — fresh session, cursor in input
+- [ ] Arrange windows so alt-tab cycles in order: Tab 1 → Zo → Tab 2
+- [ ] Test-run the prompt beforehand so you know the expected output and timing
+- [ ] Press record, click through in order, stop at end card

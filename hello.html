@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Set up Obsidian Web on Zo. One prompt to clone the repo, download the renderer, install dependencies, and start the server.">
+    <meta name="description" content="Set up Obsidian Web on Zo. Copy one prompt — pick password-protected or public readonly. Clone, install, configure auth, and start in one shot.">
     <meta property="og:title" content="Zo Computer: Obsidian: Set It Up">
-    <meta property="og:description" content="One prompt to set up Obsidian Web on Zo. Clone, install, and start.">
+    <meta property="og:description" content="Pick your mode, copy one prompt. Clone, install, configure auth, and start in one shot.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ethanthatonekid.github.io/zocomputer-obsidian/hello.html">
     <meta property="og:image" content="https://ethanthatonekid.github.io/zocomputer-obsidian/og-image-set-it-up.jpg">
@@ -14,12 +14,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23dadada'>Z</text></svg>">
     <title>Zo Computer: Obsidian: Set It Up</title>
     <link rel=stylesheet href="site.css">
-    <script>
-      window.onkeydown = function (e) {
-        if (e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
-        if (e.key == "ArrowRight") window.location.href = 'private-vault.html';
-      };
-    </script>
   </head>
   <body>
     <div class="example" id="setup">
@@ -29,9 +23,11 @@
         <tr>
           <td class="docs">
             <p>
-              Your notes stay as normal Markdown files. The browser
-              is just the window into your vault. You run the
-              Obsidian web renderer on your own Zo.
+              Pick the mode you want below and copy its prompt.
+              Each prompt is self-contained — it clones the repo,
+              installs the renderer, sets your vault path,
+              configures authentication, and starts the server.
+              No separate steps, no coming back for more.
             </p>
           </td>
           <td class="code empty"></td>
@@ -42,10 +38,9 @@
         <tr>
           <td class="docs">
             <p>
-              This is not remote desktop. No Electron needed.
-              <code>obsidian-web</code> loads Obsidian's original
-              renderer unmodified and replaces every Electron
-              dependency with lightweight HTTP shims.
+              Replace the vault path with the absolute path to
+              your notes folder before pasting. The default is
+              <code>user-data/demo-vault</code> if left unchanged.
             </p>
           </td>
           <td class="code empty"></td>
@@ -55,14 +50,17 @@
       <table>
         <tr>
           <td class="docs">
+            <h3>Password-Protected <em>(Recommended)</em></h3>
             <p>
-              The prompt below sets up the server from scratch.
-              Copy it and paste it to your Zo agent.
+              Your vault stays locked. Only you can see or edit
+              your notes. Anyone who visits is redirected to a
+              login page first. This is the default and safest
+              setup for a personal vault.
             </p>
           </td>
           <td class="code leading">
             <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-            <pre><code>Set up Obsidian Web on my Zo so I can access my Obsidian vault from a browser.
+            <pre><code>Set up a password-protected Obsidian Web vault on my Zo so only I can access my notes from a browser.
 
 1. Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory and name it obsidian-web.
 
@@ -70,9 +68,49 @@
 
 3. Install the server dependencies by running npm install inside the src/server directory.
 
-4. Start the server on port 3000 with AUTH_MODE set to disabled. Do not add any authentication yet.
+4. Set VAULT_PATH to the absolute path of my Obsidian vault. The default is user-data/demo-vault if I do not set it.
 
-After each step, confirm it succeeded before moving on. When the server is running, tell me the HTTP status code from http://127.0.0.1:3000.</code></pre>
+5. Protect the vault with authentication. Set AUTH_MODE to full. Set OBSIDIAN_WEB_USERNAME to ethan. Set OBSIDIAN_WEB_PASSWORD to a strong password. I will provide one when you ask. Set OBSIDIAN_WEB_REALM to "Obsidian Web".
+
+6. Start the server on port 3000.
+
+After each step, confirm it succeeded before moving on. When the server is running, tell me the HTTP status code from http://127.0.0.1:3000. If it is 302, the login page is working.</code></pre>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <h3>Public Readonly</h3>
+            <p>
+              Anyone can read your notes without signing in. Only
+              you can edit them after logging in.
+            </p>
+            <p>
+              <strong>Use with caution.</strong> Every note in your
+              vault is visible to anyone who visits. Do not use this
+              mode if your vault contains passwords, personal
+              journals, or financial records.
+            </p>
+          </td>
+          <td class="code leading">
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+            <pre><code>Set up a publicly viewable Obsidian Web vault on my Zo so anyone can read my notes but only I can edit them.
+
+1. Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory and name it obsidian-web.
+
+2. Inside obsidian-web, create the vendor directory and run node scripts/update-obsidian.js to download the Obsidian browser renderer.
+
+3. Install the server dependencies by running npm install inside the src/server directory.
+
+4. Set VAULT_PATH to the absolute path of my Obsidian vault. The default is user-data/demo-vault if I do not set it.
+
+5. Configure the vault so anyone can view but only I can edit. Set AUTH_MODE to readonly. Set OBSIDIAN_WEB_USERNAME to ethan. Set OBSIDIAN_WEB_PASSWORD to a strong password. I will provide one when you ask. Set OBSIDIAN_WEB_REALM to "Obsidian Web".
+
+6. Start the server on port 3000.
+
+After each step, confirm it succeeded before moving on. When the server is running, verify that visiting http://127.0.0.1:3000 shows the app without needing to log in. Confirm that edit controls are hidden for unauthenticated visitors.</code></pre>
           </td>
         </tr>
       </table>
@@ -81,17 +119,31 @@ After each step, confirm it succeeded before moving on. When the server is runni
         <tr>
           <td class="docs">
             <p>
-              Once the server is running, choose how to configure it.
+              The table below shows how each mode handles access.
+            </p>
+          </td>
+          <td class="code leading">
+            <table>
+              <tr><th>Mode</th><th>Read</th><th>Write</th><th>Use Case</th></tr>
+              <tr><td><code>full</code></td><td>Auth only</td><td>Auth only</td><td>Private vault</td></tr>
+              <tr><td><code>readonly</code></td><td>Anyone</td><td>Auth only</td><td>Public read</td></tr>
+              <tr><td><code>disabled</code></td><td>Anyone</td><td>Anyone</td><td>Fully open</td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              If you do not set <code>OBSIDIAN_WEB_PASSWORD</code>,
+              auth stays off no matter which mode you choose.
             </p>
           </td>
           <td class="code empty"></td>
         </tr>
       </table>
-
-      <p class="next">
-        <a href="private-vault.html">Private Vault (Recommended)</a> &nbsp;|&nbsp;
-        <a href="public-vault.html">Public Vault</a>
-      </p>
 
       <p class="footer">
         based on <a href="https://github.com/MusiCode1/obsidian-web">obsidian-web</a>
