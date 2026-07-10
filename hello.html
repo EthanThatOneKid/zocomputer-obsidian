@@ -126,10 +126,21 @@ After each step, confirm it succeeded before moving on. When the server is runni
             <table>
               <tr><th>Mode</th><th>Read</th><th>Write</th><th>Use Case</th></tr>
               <tr><td><code>full</code></td><td>Auth only</td><td>Auth only</td><td>Private vault</td></tr>
-              <tr><td><code>readonly</code></td><td>Anyone</td><td>Auth only</td><td>Public read</td></tr>
+              <tr><td><code>readonly</code></td><td>Anyone</td><td>Vault mutations denied (403);<br>others silently no-oped</td><td>Public read</td></tr>
               <tr><td><code>disabled</code></td><td>Anyone</td><td>Anyone</td><td>Fully open</td></tr>
             </table>
           </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="docs">
+            <p>
+              Security posture audited by <a href="https://www.zo.computer/chats/pub_NLaALvxPv35t78Ga">Fable 5</a>.
+            </p>
+          </td>
+          <td class="code empty"></td>
         </tr>
       </table>
 
