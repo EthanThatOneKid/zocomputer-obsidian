@@ -1,0 +1,8 @@
+{
+  "steps": [
+    "git clone",
+    "npm install",
+    "mkdir vault",
+    "write welcome.md"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "expectations": [
+    {
+      "text": "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"managed public Zo HTTP service\"",
+      "passed": true,
+      "evidence": "Found \"managed public Zo HTTP service\""
+    },
+    {
+      "text": "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Use local_port 3000\"",
+      "passed": true,
+      "evidence": "Found \"Use local_port 3000\""
+    },
+    {
+      "text": "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Use public=true\"",
+      "passed": true,
+      "evidence": "Found \"Use public=true\""
+    },
+    {
+      "text": "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"service URL\"",
+      "passed": true,
+      "evidence": "Found \"service URL\""
+    },
+    {
+      "text": "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"managed public Zo HTTP service\"",
+      "passed": true,
+      "evidence": "Found \"managed public Zo HTTP service\""
+    },
+    {
+      "text": "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"Use local_port 3000\"",
+      "passed": true,
+      "evidence": "Found \"Use local_port 3000\""
+    },
+    {
+      "text": "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"Use public=true\"",
+      "passed": true,
+      "evidence": "Found \"Use public=true\""
+    },
+    {
+      "text": "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"service URL\"",
+      "passed": true,
+      "evidence": "Found \"service URL\""
+    },
+    {
+      "text": "username-fallback: skills/zocomputer-obsidian/prompts/password-protected.md contains \"$ZO_USER\"",
+      "passed": true,
+      "evidence": "Found \"$ZO_USER\""
+    },
+    {
+      "text": "username-fallback: skills/zocomputer-obsidian/prompts/password-protected.md contains \"$ZO_HOST_KEY\"",
+      "passed": true,
+      "evidence": "Found \"$ZO_HOST_KEY\""
+    },
+    {
+      "text": "username-fallback: skills/zocomputer-obsidian/prompts/password-protected.md contains \"obsidian\"",
+      "passed": true,
+      "evidence": "Found \"obsidian\""
+    },
+    {
+      "text": "password-generation: skills/zocomputer-obsidian/prompts/password-protected.md contains \"generate a strong password via CLI\"",
+      "passed": true,
+      "evidence": "Found \"generate a strong password via CLI\""
+    },
+    {
+      "text": "password-generation: skills/zocomputer-obsidian/prompts/password-protected.md contains \"report it to me at the end\"",
+      "passed": true,
+      "evidence": "Found \"report it to me at the end\""
+    },
+    {
+      "text": "private-safe-vault-default: skills/zocomputer-obsidian/prompts/password-protected.md contains \"~/obsidian-vault\"",
+      "passed": true,
+      "evidence": "Found \"~/obsidian-vault\""
+    },
+    {
+      "text": "private-safe-vault-default: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Do not scan for or expose existing personal vaults\"",
+      "passed": true,
+      "evidence": "Found \"Do not scan for or expose existing personal vaults\""
+    },
+    {
+      "text": "public-safe-vault-default: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"~/public-obsidian-vault\"",
+      "passed": true,
+      "evidence": "Found \"~/public-obsidian-vault\""
+    },
+    {
+      "text": "public-safe-vault-default: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"Do not scan for or infer existing personal vaults\"",
+      "passed": true,
+      "evidence": "Found \"Do not scan for or infer existing personal vaults\""
+    },
+    {
+      "text": "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"managed public Zo HTTP service URL\"",
+      "passed": true,
+      "evidence": "Found \"managed public Zo HTTP service URL\""
+    },
+    {
+      "text": "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"localhost-only process is not complete\"",
+      "passed": true,
+      "evidence": "Found \"localhost-only process is not complete\""
+    }
+  ],
+  "summary": {
+    "passed": 19,
+    "failed": 0,
+    "total": 19,
+    "pass_rate": 1
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "errors_encountered": 0,
+    "output_chars": 3584,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "total_duration_seconds": 0
+  }
+}

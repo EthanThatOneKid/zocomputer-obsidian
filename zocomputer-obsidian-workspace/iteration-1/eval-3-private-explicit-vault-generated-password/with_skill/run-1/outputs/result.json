@@ -1,0 +1,51 @@
+{
+  "id": "private-explicit-vault-generated-password",
+  "service_label": "obsidian-web-eval-20260712071857-f37762-explicit",
+  "service_url": "https://obsidian-web-eval-20260712071857-f37762-explicit-etok.zocomputer.io",
+  "vault_path": "/home/workspace/explicit-vault-eval-20260712071857-f37762",
+  "username": "etok",
+  "password_generated": true,
+  "password": "vgDR~j%aiZ9yNogbp?]0s[MBcoOj",
+  "auth_mode": "full",
+  "expected_local_status": 302,
+  "local_status": 302,
+  "local_redirect": "http://localhost:3313/login",
+  "public_status": 302,
+  "public_redirect": null,
+  "service_url_verification": {
+    "passed": true,
+    "status": 302
+  },
+  "setup": {
+    "steps": [
+      "git clone",
+      "npm install",
+      "mkdir vault",
+      "write welcome.md"
+    ],
+    "vault_provided_by": "user (explicit path)"
+  },
+  "service": {
+    "label": "obsidian-web-eval-20260712071857-f37762-explicit",
+    "port": 3313,
+    "public": true,
+    "http_url": "https://obsidian-web-eval-20260712071857-f37762-explicit-etok.zocomputer.io"
+  },
+  "http_checks": {
+    "local": {
+      "status": 302,
+      "redirect": "http://localhost:3313/login"
+    },
+    "public": {
+      "status": 302,
+      "redirect": null
+    }
+  },
+  "teardown": {
+    "paths": [
+      "/home/workspace/obsidian-web-eval-20260712071857-f37762-explicit",
+      "/home/workspace/explicit-vault-eval-20260712071857-f37762"
+    ]
+  },
+  "transcript": "# Eval: private-explicit-vault-generated-password\n\n## Summary\n- Service created at `https://obsidian-web-eval-20260712071857-f37762-explicit-etok.zocomputer.io`\n- Vault at `/home/workspace/explicit-vault-eval-20260712071857-f37762` (user-provided path)\n- Auth mode: full (password required)\n- Local HTTP returned 302 (redirect to /login) — expected\n- Public HTTP returned 302 — expected\n- Password was auto-generated: present\n- Username: etok (from ZO_USER)\n- Vault was pre-existing, not created by the prompt\n\n## Result: PASS"
+}

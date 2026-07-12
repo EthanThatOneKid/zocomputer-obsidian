@@ -1,0 +1,14 @@
+{
+  "eval_id": 3,
+  "eval_name": "private-explicit-vault-generated-password",
+  "prompt": "Zo integration eval",
+  "assertions": [
+    "Service label is eval-scoped",
+    "Service URL is present",
+    "Vault path is eval-scoped",
+    "Generated password is present when expected",
+    "Local HTTP status is 302",
+    "Service URL verification passed",
+    "Teardown only touched eval-scoped resources"
+  ]
+}

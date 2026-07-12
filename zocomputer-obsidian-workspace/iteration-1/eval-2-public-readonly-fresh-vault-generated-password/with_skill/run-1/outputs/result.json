@@ -1,0 +1,48 @@
+{
+  "id": "public-readonly-fresh-vault-generated-password",
+  "service_label": "obsidian-web-eval-20260712071857-f37762-public",
+  "service_url": "https://obsidian-web-eval-20260712071857-f37762-public-etok.zocomputer.io",
+  "vault_path": "/home/workspace/public-obsidian-vault-eval-20260712071857-f37762",
+  "username": "etok",
+  "password_generated": true,
+  "password": "eH%s<2Q?+*c>vX|dt[.go]xB+8OL",
+  "auth_mode": "readonly",
+  "expected_local_status": 200,
+  "local_status": 200,
+  "local_redirect": null,
+  "public_status": 200,
+  "public_redirect": null,
+  "service_url_verification": {
+    "passed": true,
+    "status": 200
+  },
+  "setup": {
+    "steps": [
+      "git clone",
+      "npm install",
+      "mkdir vault",
+      "write welcome.md"
+    ]
+  },
+  "service": {
+    "label": "obsidian-web-eval-20260712071857-f37762-public",
+    "port": 3312,
+    "public": true,
+    "http_url": "https://obsidian-web-eval-20260712071857-f37762-public-etok.zocomputer.io"
+  },
+  "http_checks": {
+    "local": {
+      "status": 200
+    },
+    "public": {
+      "status": 200
+    }
+  },
+  "teardown": {
+    "paths": [
+      "/home/workspace/obsidian-web-eval-20260712071857-f37762-public",
+      "/home/workspace/public-obsidian-vault-eval-20260712071857-f37762"
+    ]
+  },
+  "transcript": "# Eval: public-readonly-fresh-vault-generated-password\n\n## Summary\n- Service created at `https://obsidian-web-eval-20260712071857-f37762-public-etok.zocomputer.io`\n- Vault at `/home/workspace/public-obsidian-vault-eval-20260712071857-f37762`\n- Auth mode: readonly (no password required to view)\n- Local HTTP returned 200 — expected\n- Public HTTP returned 200 — expected\n- Password was auto-generated: present\n- Username: etok (from ZO_USER)\n\n## Result: PASS"
+}

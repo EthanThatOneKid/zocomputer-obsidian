@@ -1,0 +1,10 @@
+{
+  "local": {
+    "status": 302,
+    "redirect": "http://localhost:3311/login"
+  },
+  "public": {
+    "status": 302,
+    "redirect": null
+  }
+}

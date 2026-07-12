@@ -1,0 +1,59 @@
+{
+  "skill_name": "zocomputer-obsidian",
+  "evals": [
+    {
+      "id": "private-fresh-vault-generated-password",
+      "variant": "password-protected",
+      "description": "No vault path and no password. The setup must create a private eval vault, generate credentials, register a public managed service, and verify login redirect behavior.",
+      "auth_mode": "full",
+      "vault_kind": "fresh-private",
+      "expected_local_status": 302,
+      "expected_service_behavior": "login-redirect",
+      "assertions": [
+        "Service label contains obsidian-web-eval-",
+        "Service URL is present and starts with https://",
+        "Vault path contains obsidian-vault-eval-",
+        "Generated password is present",
+        "Local HTTP status is 302",
+        "Service URL verification reaches the login page or login redirect",
+        "Teardown only touches eval-scoped resources"
+      ]
+    },
+    {
+      "id": "public-readonly-fresh-vault-generated-password",
+      "variant": "public-readonly",
+      "description": "No public vault path and no password. The setup must create a fresh public-readonly eval vault instead of scanning personal vaults, register a public managed service, and verify unauthenticated load behavior.",
+      "auth_mode": "readonly",
+      "vault_kind": "fresh-public",
+      "expected_local_status": 200,
+      "expected_service_behavior": "unauthenticated-load",
+      "assertions": [
+        "Service label contains obsidian-web-eval-",
+        "Service URL is present and starts with https://",
+        "Vault path contains public-obsidian-vault-eval-",
+        "Generated password is present",
+        "Local HTTP status is 200",
+        "Service URL verification loads without login",
+        "Teardown only touches eval-scoped resources"
+      ]
+    },
+    {
+      "id": "private-explicit-vault-generated-password",
+      "variant": "password-protected",
+      "description": "Explicit eval fixture vault and generated password. The setup must use the provided fixture path, not create the default private vault as the active VAULT_PATH, register a public managed service, and verify login redirect behavior.",
+      "auth_mode": "full",
+      "vault_kind": "explicit-fixture",
+      "expected_local_status": 302,
+      "expected_service_behavior": "login-redirect",
+      "assertions": [
+        "Service label contains obsidian-web-eval-",
+        "Service URL is present and starts with https://",
+        "Vault path contains explicit-vault-eval-",
+        "Generated password is present",
+        "Local HTTP status is 302",
+        "Service URL verification reaches the login page or login redirect",
+        "Teardown only touches eval-scoped resources"
+      ]
+    }
+  ]
+}
