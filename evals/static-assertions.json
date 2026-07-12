@@ -45,6 +45,39 @@
       "id": "completion-not-localhost-only",
       "file": "skills/zocomputer-obsidian/SKILL.md",
       "contains": ["managed public Zo HTTP service URL", "localhost-only process is not complete"]
+    },
+    {
+      "id": "fast-path-existing-service",
+      "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+      "contains": [
+        "Fast path before setup",
+        "do not reinstall, rerun renderer downloads, or rotate credentials",
+        "Batch independent checks where possible"
+      ]
+    },
+    {
+      "id": "reuse-existing-password",
+      "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+      "contains": [
+        "reuse the existing password",
+        "whether the password was generated or reused"
+      ]
+    },
+    {
+      "id": "no-secret-files",
+      "file": "skills/zocomputer-obsidian/SKILL.md",
+      "contains": [
+        "Do not write generated passwords or service environment variables",
+        "Pass secrets directly through the managed service environment API"
+      ]
+    },
+    {
+      "id": "installer-failure-is-non-blocking-when-healthy",
+      "file": "skills/zocomputer-obsidian/SKILL.md",
+      "contains": [
+        "report the updater failure as non-blocking",
+        "Only repair the renderer install when the app cannot run without it"
+      ]
     }
   ]
 }

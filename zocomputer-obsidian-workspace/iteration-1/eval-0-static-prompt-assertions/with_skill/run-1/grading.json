@@ -94,12 +94,57 @@
       "text": "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"localhost-only process is not complete\"",
       "passed": true,
       "evidence": "Found \"localhost-only process is not complete\""
+    },
+    {
+      "text": "fast-path-existing-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Fast path before setup\"",
+      "passed": true,
+      "evidence": "Found \"Fast path before setup\""
+    },
+    {
+      "text": "fast-path-existing-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"do not reinstall, rerun renderer downloads, or rotate credentials\"",
+      "passed": true,
+      "evidence": "Found \"do not reinstall, rerun renderer downloads, or rotate credentials\""
+    },
+    {
+      "text": "fast-path-existing-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Batch independent checks where possible\"",
+      "passed": true,
+      "evidence": "Found \"Batch independent checks where possible\""
+    },
+    {
+      "text": "reuse-existing-password: skills/zocomputer-obsidian/prompts/password-protected.md contains \"reuse the existing password\"",
+      "passed": true,
+      "evidence": "Found \"reuse the existing password\""
+    },
+    {
+      "text": "reuse-existing-password: skills/zocomputer-obsidian/prompts/password-protected.md contains \"whether the password was generated or reused\"",
+      "passed": true,
+      "evidence": "Found \"whether the password was generated or reused\""
+    },
+    {
+      "text": "no-secret-files: skills/zocomputer-obsidian/SKILL.md contains \"Do not write generated passwords or service environment variables\"",
+      "passed": true,
+      "evidence": "Found \"Do not write generated passwords or service environment variables\""
+    },
+    {
+      "text": "no-secret-files: skills/zocomputer-obsidian/SKILL.md contains \"Pass secrets directly through the managed service environment API\"",
+      "passed": true,
+      "evidence": "Found \"Pass secrets directly through the managed service environment API\""
+    },
+    {
+      "text": "installer-failure-is-non-blocking-when-healthy: skills/zocomputer-obsidian/SKILL.md contains \"report the updater failure as non-blocking\"",
+      "passed": true,
+      "evidence": "Found \"report the updater failure as non-blocking\""
+    },
+    {
+      "text": "installer-failure-is-non-blocking-when-healthy: skills/zocomputer-obsidian/SKILL.md contains \"Only repair the renderer install when the app cannot run without it\"",
+      "passed": true,
+      "evidence": "Found \"Only repair the renderer install when the app cannot run without it\""
     }
   ],
   "summary": {
-    "passed": 19,
+    "passed": 28,
     "failed": 0,
-    "total": 19,
+    "total": 28,
     "pass_rate": 1
   },
   "execution_metrics": {
@@ -107,7 +152,7 @@
     "total_tool_calls": 0,
     "total_steps": 1,
     "errors_encountered": 0,
-    "output_chars": 3584,
+    "output_chars": 5716,
     "transcript_chars": 0
   },
   "timing": {

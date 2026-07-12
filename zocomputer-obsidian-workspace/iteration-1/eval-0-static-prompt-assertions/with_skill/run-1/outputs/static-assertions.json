@@ -112,5 +112,59 @@
     "file": "skills/zocomputer-obsidian/SKILL.md",
     "expected": "localhost-only process is not complete",
     "passed": true
+  },
+  {
+    "assertion": "fast-path-existing-service",
+    "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+    "expected": "Fast path before setup",
+    "passed": true
+  },
+  {
+    "assertion": "fast-path-existing-service",
+    "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+    "expected": "do not reinstall, rerun renderer downloads, or rotate credentials",
+    "passed": true
+  },
+  {
+    "assertion": "fast-path-existing-service",
+    "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+    "expected": "Batch independent checks where possible",
+    "passed": true
+  },
+  {
+    "assertion": "reuse-existing-password",
+    "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+    "expected": "reuse the existing password",
+    "passed": true
+  },
+  {
+    "assertion": "reuse-existing-password",
+    "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+    "expected": "whether the password was generated or reused",
+    "passed": true
+  },
+  {
+    "assertion": "no-secret-files",
+    "file": "skills/zocomputer-obsidian/SKILL.md",
+    "expected": "Do not write generated passwords or service environment variables",
+    "passed": true
+  },
+  {
+    "assertion": "no-secret-files",
+    "file": "skills/zocomputer-obsidian/SKILL.md",
+    "expected": "Pass secrets directly through the managed service environment API",
+    "passed": true
+  },
+  {
+    "assertion": "installer-failure-is-non-blocking-when-healthy",
+    "file": "skills/zocomputer-obsidian/SKILL.md",
+    "expected": "report the updater failure as non-blocking",
+    "passed": true
+  },
+  {
+    "assertion": "installer-failure-is-non-blocking-when-healthy",
+    "file": "skills/zocomputer-obsidian/SKILL.md",
+    "expected": "Only repair the renderer install when the app cannot run without it",
+    "passed": true
   }
 ]

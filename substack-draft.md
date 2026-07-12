@@ -126,7 +126,9 @@ Not prose around commands. Not a checklist that assumes you are the shell. Actua
 ```text
 Set up a password-protected Obsidian Web vault on my Zo so only I can access my notes from a browser.
 
-Run the setup end-to-end in one pass. Ask me a question only if there is no safe default or if using an existing private path could expose my data.
+Ensure the desired state in one pass. Ask me a question only if there is no safe default or if using an existing private path could expose my data.
+
+Fast path first: if an obsidian-web managed service already exists, is healthy, has full auth configured, and redirects to /login, do not reinstall, rerun renderer downloads, or rotate credentials. Just verify the managed URL and report the existing status.
 
 1. Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory and name it obsidian-web.
 
@@ -136,11 +138,11 @@ Run the setup end-to-end in one pass. Ask me a question only if there is no safe
 
 4. Set VAULT_PATH safely. If I do not provide a vault path, create a new vault at ~/obsidian-vault, add a Welcome.md note, and use that path.
 
-5. Protect the vault with authentication. Set AUTH_MODE to full. Generate a strong password if I do not provide one.
+5. Protect the vault with authentication. Set AUTH_MODE to full. Reuse an existing managed-service password if one is already configured; otherwise generate a strong password if I do not provide one. Do not write secrets to .env files unless I explicitly ask.
 
 6. Start the server as a managed public Zo HTTP service, not only as a localhost process.
 
-After each step, confirm it succeeded before moving on. When the service is running, tell me the HTTP status code from http://127.0.0.1:3000.
+When the service is running, tell me the HTTP status code from http://127.0.0.1:3000 and verify the managed service URL reaches /login.
 ```
 
 There is still technical specificity here. The prompt names the repo, directories, scripts, environment variables, ports, service settings, and verification checks. But the human action is different. You are not doing the setup. You are supervising it.

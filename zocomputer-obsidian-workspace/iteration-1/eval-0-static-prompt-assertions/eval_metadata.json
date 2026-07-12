@@ -21,6 +21,15 @@
     "public-safe-vault-default: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"~/public-obsidian-vault\"",
     "public-safe-vault-default: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"Do not scan for or infer existing personal vaults\"",
     "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"managed public Zo HTTP service URL\"",
-    "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"localhost-only process is not complete\""
+    "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"localhost-only process is not complete\"",
+    "fast-path-existing-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Fast path before setup\"",
+    "fast-path-existing-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"do not reinstall, rerun renderer downloads, or rotate credentials\"",
+    "fast-path-existing-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Batch independent checks where possible\"",
+    "reuse-existing-password: skills/zocomputer-obsidian/prompts/password-protected.md contains \"reuse the existing password\"",
+    "reuse-existing-password: skills/zocomputer-obsidian/prompts/password-protected.md contains \"whether the password was generated or reused\"",
+    "no-secret-files: skills/zocomputer-obsidian/SKILL.md contains \"Do not write generated passwords or service environment variables\"",
+    "no-secret-files: skills/zocomputer-obsidian/SKILL.md contains \"Pass secrets directly through the managed service environment API\"",
+    "installer-failure-is-non-blocking-when-healthy: skills/zocomputer-obsidian/SKILL.md contains \"report the updater failure as non-blocking\"",
+    "installer-failure-is-non-blocking-when-healthy: skills/zocomputer-obsidian/SKILL.md contains \"Only repair the renderer install when the app cannot run without it\""
   ]
 }
