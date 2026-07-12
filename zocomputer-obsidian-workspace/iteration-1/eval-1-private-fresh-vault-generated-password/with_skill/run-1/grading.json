@@ -1,0 +1,56 @@
+{
+  "expectations": [
+    {
+      "text": "Service label is eval-scoped",
+      "passed": true,
+      "evidence": "obsidian-web-eval-20260712071857-f37762-private"
+    },
+    {
+      "text": "Service URL is present",
+      "passed": true,
+      "evidence": "https://obsidian-web-eval-20260712071857-f37762-private-etok.zocomputer.io"
+    },
+    {
+      "text": "Vault path is eval-scoped",
+      "passed": true,
+      "evidence": "/home/workspace/obsidian-vault-eval-20260712071857-f37762"
+    },
+    {
+      "text": "Generated password is present when expected",
+      "passed": true,
+      "evidence": "password present"
+    },
+    {
+      "text": "Local HTTP status is 302",
+      "passed": true,
+      "evidence": "local_status=302"
+    },
+    {
+      "text": "Service URL verification passed",
+      "passed": true,
+      "evidence": "{\"passed\":true,\"status\":302}"
+    },
+    {
+      "text": "Teardown only touched eval-scoped resources",
+      "passed": true,
+      "evidence": "[\"/home/workspace/obsidian-web-eval-20260712071857-f37762-private\",\"/home/workspace/obsidian-vault-eval-20260712071857-f37762\"]"
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "errors_encountered": 0,
+    "output_chars": 870,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "total_duration_seconds": 0
+  }
+}

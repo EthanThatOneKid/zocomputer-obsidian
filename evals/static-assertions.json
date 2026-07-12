@@ -1,0 +1,50 @@
+{
+  "skill_name": "zocomputer-obsidian",
+  "assertions": [
+    {
+      "id": "private-managed-service",
+      "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+      "contains": [
+        "managed public Zo HTTP service",
+        "Use local_port 3000",
+        "Use public=true",
+        "service URL"
+      ]
+    },
+    {
+      "id": "public-managed-service",
+      "file": "skills/zocomputer-obsidian/prompts/public-readonly.md",
+      "contains": [
+        "managed public Zo HTTP service",
+        "Use local_port 3000",
+        "Use public=true",
+        "service URL"
+      ]
+    },
+    {
+      "id": "username-fallback",
+      "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+      "contains": ["$ZO_USER", "$ZO_HOST_KEY", "obsidian"]
+    },
+    {
+      "id": "password-generation",
+      "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+      "contains": ["generate a strong password via CLI", "report it to me at the end"]
+    },
+    {
+      "id": "private-safe-vault-default",
+      "file": "skills/zocomputer-obsidian/prompts/password-protected.md",
+      "contains": ["~/obsidian-vault", "Do not scan for or expose existing personal vaults"]
+    },
+    {
+      "id": "public-safe-vault-default",
+      "file": "skills/zocomputer-obsidian/prompts/public-readonly.md",
+      "contains": ["~/public-obsidian-vault", "Do not scan for or infer existing personal vaults"]
+    },
+    {
+      "id": "completion-not-localhost-only",
+      "file": "skills/zocomputer-obsidian/SKILL.md",
+      "contains": ["managed public Zo HTTP service URL", "localhost-only process is not complete"]
+    }
+  ]
+}

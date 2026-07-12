@@ -1,0 +1,23 @@
+{
+  "skill_name": "zocomputer-obsidian",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up a password-protected Obsidian Web vault on my Zo. I do not already have a vault and I did not provide a password.",
+      "expected_output": "Uses the zocomputer-obsidian password-protected workflow, creates a fresh safe vault, derives username from Zo context, generates a strong password via CLI, starts the service, and verifies a 302 login redirect.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Set up a public readonly Obsidian Web vault on Zo. I want it public but I did not give you a vault path.",
+      "expected_output": "Uses the public-readonly workflow, creates a new public starter vault instead of scanning personal vaults, generates credentials if needed, starts the service, and verifies unauthenticated readonly behavior.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Run obsidian-web on my Zo using /home/workspace/notes as my private vault. Generate a strong password for me.",
+      "expected_output": "Uses the provided vault path, does not ask unnecessary questions, generates a CLI password, configures AUTH_MODE=full, starts the service, and reports path, username, password, URL if available, and status code.",
+      "files": []
+    }
+  ]
+}

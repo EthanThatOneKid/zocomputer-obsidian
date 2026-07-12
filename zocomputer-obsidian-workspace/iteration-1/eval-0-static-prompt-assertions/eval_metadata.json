@@ -1,0 +1,26 @@
+{
+  "eval_id": 0,
+  "eval_name": "static-prompt-assertions",
+  "prompt": "Validate zocomputer-obsidian prompt source files against static policy assertions.",
+  "assertions": [
+    "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"managed public Zo HTTP service\"",
+    "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Use local_port 3000\"",
+    "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Use public=true\"",
+    "private-managed-service: skills/zocomputer-obsidian/prompts/password-protected.md contains \"service URL\"",
+    "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"managed public Zo HTTP service\"",
+    "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"Use local_port 3000\"",
+    "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"Use public=true\"",
+    "public-managed-service: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"service URL\"",
+    "username-fallback: skills/zocomputer-obsidian/prompts/password-protected.md contains \"$ZO_USER\"",
+    "username-fallback: skills/zocomputer-obsidian/prompts/password-protected.md contains \"$ZO_HOST_KEY\"",
+    "username-fallback: skills/zocomputer-obsidian/prompts/password-protected.md contains \"obsidian\"",
+    "password-generation: skills/zocomputer-obsidian/prompts/password-protected.md contains \"generate a strong password via CLI\"",
+    "password-generation: skills/zocomputer-obsidian/prompts/password-protected.md contains \"report it to me at the end\"",
+    "private-safe-vault-default: skills/zocomputer-obsidian/prompts/password-protected.md contains \"~/obsidian-vault\"",
+    "private-safe-vault-default: skills/zocomputer-obsidian/prompts/password-protected.md contains \"Do not scan for or expose existing personal vaults\"",
+    "public-safe-vault-default: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"~/public-obsidian-vault\"",
+    "public-safe-vault-default: skills/zocomputer-obsidian/prompts/public-readonly.md contains \"Do not scan for or infer existing personal vaults\"",
+    "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"managed public Zo HTTP service URL\"",
+    "completion-not-localhost-only: skills/zocomputer-obsidian/SKILL.md contains \"localhost-only process is not complete\""
+  ]
+}
