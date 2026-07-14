@@ -1,14 +1,14 @@
-# Kill your Notion subscription
+# Your Knowledge Base Doesn't Need a Landlord
 
-_Rebuilding a notes workspace with FOSS, Obsidian, and Zo Computer instead of renting your knowledge base from SaaS._
+_Replacing Notion with Obsidian and Zo Computer._
 
 July's theme is simple: Kill Your SaaS.
 
 Pick a tool you pay for every month and rebuild it on Zo, your way. Cancel the subscription. Own the software. Your CRM, your scheduler, your notes app, that analytics dashboard: make the version that actually fits how you work.
 
-For me, the obvious target is the Notion-shaped part of knowledge work.
+For me, the obvious target is the Notion-shaped part of knowledge work: notes, docs, project boards, lightweight databases, public pages, and the messy operating memory that accumulates around real work.
 
-Not necessarily Notion the company. Notion is a good product. That is why it is dangerous as a default. It gives you notes, docs, wikis, databases, pages, sharing, permissions, templates, comments, AI, and just enough structure that you can convince yourself the system is yours.
+Not necessarily Notion the company. Notion is a good product. That is why it is dangerous as a default. It gives you notes, docs, wikis, databases, project boards, pages, sharing, permissions, templates, comments, AI, and just enough structure that you can convince yourself the system is yours.
 
 But the center of gravity is still the service.
 
@@ -27,6 +27,8 @@ But the bigger point is this:
 This is a Notion replacement pattern.
 
 Not a Notion clone. Not a worse Notion. A replacement for the part of Notion I actually need: a personal knowledge workspace with a private interior, a public surface, and files I own underneath.
+
+That matters because Notion is not only competing with notes apps. It absorbs the edges of Jira, Confluence, Airtable, CMSs, org charts, roadmaps, and personal CRMs. The gravity comes from the bundle. One workspace slowly becomes the place where every bit of structured and unstructured knowledge is expected to live.
 
 I called the sneak peek ["Killing knowledge work with FOSS + Zo Computer"](https://x.com/etok_me/status/2075991076721377501?s=20). This tutorial is the concrete version: replace the rented knowledge workspace with free software, plain text, and a personal computer that can host the interface for you.
 
@@ -54,7 +56,7 @@ That is the trade I want to unwind.
 
 ## What I do not want to rent
 
-I do not want to rent my notes app.
+I do not want to rent my notes app, my project board, or my operating manual.
 
 I do not want to rent URLs for my own writing.
 
@@ -70,9 +72,13 @@ For notes, that means files. For infrastructure, that means a machine I can dire
 
 This is where Zo becomes interesting.
 
-A personal server is not compelling because I want to become a sysadmin. I do not. It is compelling because an agent can operate the machine for me. I describe the desired state, and the agent performs the mechanical work: clone the repo, install dependencies, configure environment variables, start the service, verify the result, and report back.
+[Ben Guo calls this escaping techno-feudalism](https://www.zo.computer/blog/escaping-techno-feudalism): not the DIY pain of becoming your own sysadmin, not the peasantry of renting every surface from SaaS, but a third way where you own the land and an agent helps operate it.
 
-That changes the shape of self-hosting. Less dashboard clicking. Less ritual. More delegation.
+That framing clicked for me because Zo is not just another dashboard. It is a computer I can direct. I describe the desired state, and the agent performs the mechanical work: clone the repo, install dependencies, configure environment variables, start the service, verify the result, and report back.
+
+Jeff Kazzee's [The Kill List](https://kill-list-jeffkazzee.zocomputer.io/) is the sharper example. An agent scans subscription receipts in Gmail, stamps each bill KILL, KEEP, or TRIM, and leaves the decision to you. Your inbox never leaves your machine. Your Zo finds the waste. You make the call.
+
+That changes the shape of self-hosting. Less dashboard clicking. Less ritual. More delegation. The point is not to cosplay as infrastructure staff. The point is to make your computer useful enough that owning the system becomes practical again.
 
 ## The replacement stack
 
@@ -80,6 +86,9 @@ Here is the Notion-shaped bundle rebuilt with FOSS and Zo:
 
 - Notes are Markdown files in an Obsidian vault.
 - Docs and wikis are folders, links, backlinks, graph view, and search.
+- Project boards can be Markdown-backed kanban instead of a rented Jira-shaped database.
+- Lightweight structured data can live in frontmatter, tables, queries, and conventions instead of a vendor schema.
+- Org charts, operating manuals, roadmaps, and project plans can be linked documents instead of scattered SaaS states.
 - The browser interface is `obsidian-web`, not a separate notes product.
 - Private mode is password-protected Obsidian Web on your Zo.
 - Public mode is readonly Obsidian Web: anyone can read, only you can edit.
@@ -87,7 +96,9 @@ Here is the Notion-shaped bundle rebuilt with FOSS and Zo:
 - Hosting is a managed Zo HTTP service with a public URL.
 - Portability is the folder. Back it up, sync it, version it, move it.
 
-This does not recreate every Notion feature. That is fine. I am not trying to rebuild Notion's business. I am trying to rebuild my knowledge system.
+This does not recreate every Notion feature or every Jira workflow. That is fine. I am not trying to rebuild their businesses. I am trying to rebuild my knowledge system.
+
+Obsidian is not just a notes app in this setup. It is a file-backed workspace substrate. Plugins and conventions can add kanban, structured metadata, diagrams, publishing, and lightweight databases, but the durable object stays the same: a folder of files I can inspect without asking a service for permission.
 
 The important inversion is that the browser becomes a window, not a prison.
 
@@ -95,7 +106,7 @@ In most SaaS tools, the browser is the product. Your data moves toward the servi
 
 That distinction matters.
 
-If I outgrow the web interface, the notes remain. If I change servers, the notes remain. If I want to publish some of the vault and keep the rest private, I can create zones instead of migrating to a new platform.
+If I outgrow the web interface, the vault remains. If I change servers, the files remain. If I want to publish some of the vault and keep the rest private, I can create zones instead of migrating to a new platform.
 
 The folder is the root of trust.
 
@@ -121,31 +132,13 @@ The web is still good at that.
 
 The most practical part of the tutorial is also the weirdest part: the install instructions are prompts.
 
-Not prose around commands. Not a checklist that assumes you are the shell. Actual instructions for an agent:
+This was not written as a theoretical example. It came out of an actual Zo session where the agent set up the service, ran the checks, and turned the working path into a reusable prompt.
 
-```text
-Set up a password-protected Obsidian Web vault on my Zo so only I can access my notes from a browser.
+<!-- Source context: original Zo chat archived privately at https://gist.github.com/EthanThatOneKid/e023ad5e288970c06f52b0701765b466. Do not publish the raw link without scrubbing PII. -->
 
-Ensure the desired state in one pass. Ask me a question only if there is no safe default or if using an existing private path could expose my data.
+Not prose around commands. Not a checklist that assumes you are the shell. Actual instructions for an agent.
 
-Fast path first: if an obsidian-web managed service already exists, is healthy, has full auth configured, and redirects to /login, do not reinstall, rerun renderer downloads, or rotate credentials. Just verify the managed URL and report the existing status.
-
-1. Clone https://github.com/EthanThatOneKid/obsidian-web.git into my home directory and name it obsidian-web.
-
-2. Inside obsidian-web, create the vendor directory and run node scripts/update-obsidian.js to download the Obsidian browser renderer.
-
-3. Install the server dependencies by running npm install inside the src/server directory.
-
-4. Set VAULT_PATH safely. If I do not provide a vault path, create a new vault at ~/obsidian-vault, add a Welcome.md note, and use that path.
-
-5. Protect the vault with authentication. Set AUTH_MODE to full. Reuse an existing managed-service password if one is already configured; otherwise generate a strong password if I do not provide one. Do not write secrets to .env files unless I explicitly ask.
-
-6. Start the server as a managed public Zo HTTP service, not only as a localhost process.
-
-When the service is running, tell me the HTTP status code from http://127.0.0.1:3000 and verify the managed service URL reaches /login.
-```
-
-There is still technical specificity here. The prompt names the repo, directories, scripts, environment variables, ports, service settings, and verification checks. But the human action is different. You are not doing the setup. You are supervising it.
+You can see the full setup prompt on the [tutorial page](https://ethanthatonekid.github.io/zocomputer-obsidian/). It is concrete: repo names, scripts, environment variables, service settings, ports, auth behavior, and verification checks. But the human action is different. You are not doing the setup. You are supervising it.
 
 This is where agentic computing becomes less abstract to me.
 
@@ -163,11 +156,13 @@ Owning the server means you also own the consequences of misconfiguration. Publi
 
 That is why I like that the tutorial makes you choose your mode upfront instead of pretending there is one happy path.
 
+That caveat changed the tutorial itself. Before publishing it, I put the setup in front of Fable 5, Anthropic's latest advanced model and a notorious security killer. The review focused on the obvious nightmare: a prompt that accidentally helps someone publish their private vault. That is why the final prompts are strict about vault paths, authentication mode, readonly behavior, managed-service checks, and verifying `/login` before calling the setup complete.
+
 The point is not to make risk disappear. The point is to make the boundaries legible.
 
 There is also a product caveat: this is not Notion-for-everyone. If you need collaborative databases, rich tables, enterprise permissions, comments, and polished team onboarding, Notion is going to feel better today.
 
-But if what you actually need is a durable personal knowledge base with private notes, public docs, and a browser URL, this stack is already enough to start killing the subscription.
+But if what you actually need is a durable personal knowledge base with private notes, public docs, project boards, structured context, and a browser URL, this stack is already enough to start replacing the rented workspace.
 
 ## Cancel the subscription, keep the system
 
@@ -189,7 +184,7 @@ Notion is a great product. That is not the point.
 
 The point is that my knowledge system should not require a subscription to remain mine.
 
-Kill the SaaS. Keep the notes.
+Stop renting the workspace. Keep the knowledge base.
 
 ---
 
